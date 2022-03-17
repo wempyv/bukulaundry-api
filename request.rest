@@ -1,0 +1,29 @@
+GET http://localhost:5000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJXZW1weSBWaXJnYW5hIiwiZW1haWwiOiJ0ZXN0QHRlc3QuY29tIiwiaWF0IjoxNjQ3NDUyNDQ5LCJleHAiOjE2NDc0NTI0NjR9.Zm0y5eHuEX6cWmDf6y4U6v1A09uru0XPkVqMt1jH42Q
+
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name" : "Wempy Virganaa",
+    "email" : "test2@test.com",
+    "password" : "123456123",
+    "confPassword" : "123456133"
+}
+
+###
+
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email":"test@test.com",
+    "password" :"123456"
+}
+
+###
+GET http://localhost:5000/token
+
+###
+DELETE http://localhost:5000/logout
