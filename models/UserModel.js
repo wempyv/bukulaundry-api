@@ -13,6 +13,24 @@ const users = db.define('users', {
     password: {
         type: DataTypes.STRING
     },
+    address: {
+        type: DataTypes.STRING
+    },
+    whatsapp_number: {
+        type: DataTypes.INTEGER
+    },
+    price_wash_rubbing: {
+        type: DataTypes.INTEGER
+    },
+    price_rubbing: {
+        type: DataTypes.INTEGER
+    },
+    price_wash: {
+        type: DataTypes.INTEGER
+    },
+    service_fee: {
+        type: DataTypes.INTEGER
+    },
     refresh_token: {
         type: DataTypes.TEXT
     }

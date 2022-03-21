@@ -6,9 +6,11 @@ import cors from 'cors';
 import router from './routes/index.js';
 dotenv.config();
 const app = express();
+import Users from './models/UserModel.js';
 
 try {
     await db.authenticate();
+    // await Users.sync()
 } catch (error) {
     console.log(error)
 }
