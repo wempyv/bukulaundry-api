@@ -14,7 +14,7 @@ export const getUsers = async (req, res) => {
 }
 
 export const Register = async (req, res) => {
-    const { name, email, password, confPassword } = req.body;
+    const { name, email, password, confPassword, address, whatsapp_number } = req.body;
 
     if (password !== confPassword) return res.status(400).json({ msg: 'Password dan Konfirmasi Password tidak cocok !' })
 
@@ -22,9 +22,11 @@ export const Register = async (req, res) => {
     const hashPassword = await bcrypt.hash(password, salt)
     try {
         await Users.create({
-            name: name,
             email: email,
-            password: hashPassword
+            password: hashPassword,
+            name: name,
+            address: address,
+            whatsapp_number: whatsapp_number
         });
         res.json({ msg: 'Register Berhasil' });
     } catch (error) {
@@ -39,6 +41,7 @@ export const Login = async (req, res) => {
                 email: req.body.email
             }
         });
+
         const match = await bcrypt.compare(req.body.password, user[0].password);
 
         //    If wrong password / not match password

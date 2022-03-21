@@ -17,7 +17,7 @@ const users = db.define('users', {
         type: DataTypes.STRING
     },
     whatsapp_number: {
-        type: DataTypes.INTEGER
+        type: DataTypes.STRING
     },
     price_wash_rubbing: {
         type: DataTypes.INTEGER
