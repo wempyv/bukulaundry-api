@@ -54,7 +54,7 @@ export const Login = async (req, res) => {
         const whatsapp_number = user[0].whatsapp_number;
         const price_wash_rubbing = user[0].price_wash_rubbing;
         const price_rubbing = user[0].price_rubbing;
-        const price_wash = user[0].wash;
+        const price_wash = user[0].price_wash;
         const service_fee = user[0].service_fee;
 
         const accessToken = jwt.sign({ userId, name, email }, process.env.ACCESS_TOKEN_SECRET, {

@@ -23,7 +23,7 @@ export const refreshToken = async (req, res) => {
             const whatsapp_number = user[0].whatsapp_number;
             const price_wash_rubbing = user[0].price_wash_rubbing;
             const price_rubbing = user[0].price_rubbing;
-            const price_wash = user[0].wash;
+            const price_wash = user[0].price_wash;
             const service_fee = user[0].service_fee;
 
             const accessToken = jwt.sign({ userId, name, email, address, whatsapp_number, price_wash_rubbing, price_rubbing, price_wash, service_fee }, process.env.ACCESS_TOKEN_SECRET, {
