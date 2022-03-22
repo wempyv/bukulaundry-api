@@ -1,6 +1,6 @@
-import Customer from '../models/CustomerModel';
+import Customer from '../models/CustomerModel.js';
 
-export const GetAllCustomer = async (req, res) => {
+export const getAllCustomer = async (req, res) => {
     try {
         const customers = await Customer.findAll({
             where: {
@@ -13,7 +13,7 @@ export const GetAllCustomer = async (req, res) => {
     }
 }
 
-export const GetCustomerById = async (req, res) => {
+export const getCustomerById = async (req, res) => {
     try {
         const customer = await Customer.findAll({
             where: {
