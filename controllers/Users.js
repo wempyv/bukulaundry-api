@@ -80,6 +80,38 @@ export const Login = async (req, res) => {
     }
 }
 
+export const updateUser = async (req, res) => {
+    const { name, email, password, address, whatsapp_number, price_wash_rubbing, price_rubbing, price_wash, service_fee } = req.body
+
+    const salt = await bcrypt.genSalt();
+    const hashPassword = await bcrypt.hash(password, salt)
+
+    const body = {
+        email: email,
+        password: hashPassword,
+        name: name,
+        address: address,
+        whatsapp_number: whatsapp_number,
+        price_wash_rubbing: price_wash_rubbing,
+        price_rubbing: price_rubbing,
+        price_wash: price_wash,
+        service_fee: service_fee
+    }
+
+    try {
+        await Users.update(body, {
+            where: {
+                id: req.params.id
+            }
+        });
+        res.json({
+            "message": "Users auth Updated"
+        })
+    } catch (error) {
+        res.json({ message: error.message })
+    }
+}
+
 export const Logout = async (req, res) => {
     const refreshToken = req.cookies.refreshToken;
 
