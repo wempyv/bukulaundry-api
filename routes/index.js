@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get('/users', verifyToken, getUsers);
 router.post('/users', Register);
-router.patch('/:id', updateUser);
+router.patch('/users/:id', updateUser);
 router.post('/login', Login);
 router.get('/token', refreshToken);
 router.delete('/logout', Logout);
