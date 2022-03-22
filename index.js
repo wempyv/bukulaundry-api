@@ -7,10 +7,11 @@ import router from './routes/index.js';
 dotenv.config();
 const app = express();
 import Users from './models/UserModel.js';
+import Customers from './models/CustomerModel.js';
 
 try {
     await db.authenticate();
-    // await Users.sync()
+    // await Customers.sync()
 } catch (error) {
     console.log(error)
 }
