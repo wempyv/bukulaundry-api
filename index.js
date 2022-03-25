@@ -12,7 +12,7 @@ import Transactions from './models/TransactionModel.js';
 
 try {
     await db.authenticate();
-    await Transactions.sync()
+    // await Transactions.sync()
 } catch (error) {
     console.log(error)
 }

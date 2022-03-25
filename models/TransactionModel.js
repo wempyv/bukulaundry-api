@@ -7,7 +7,7 @@ const transactions = db.define('transactions', {
     transaction_unique: {
         type: DataTypes.STRING
     },
-    users_id: {
+    user_id: {
         type: DataTypes.INTEGER
     },
     name_customer: {

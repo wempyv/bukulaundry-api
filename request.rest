@@ -43,3 +43,24 @@ Content-Type: application/json
 
 ###
 GET  http://localhost:5000/customer/3
+
+###
+POST http://localhost:5000/transaction
+Content-Type: application/json
+
+{
+    "transaction_unique":"BUKULAUNDRY1229",
+    "user_id":2,
+    "name_customer":"Wempy Virgana",
+    "address":"Jalan Gatot subroto",
+    "whatsapp_number":"087742781223",
+    "total_weight":4,
+    "total_bill":5000,
+    "status_payment":"PENDING",
+    "type_laundry":"CUCI + GOSOK",
+    "status_laundry":"WASHING",
+    "additional_bill":5000,
+    "service":true,
+    "status_on_demand":"SEDANG DI ANTAR",
+    "detail_item":[{"name_item":"Baju Kaos","total":5},{"name_item":"Baju Batik","total":2}]
+}
