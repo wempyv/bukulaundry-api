@@ -1,4 +1,3 @@
-import customers from '../models/CustomerModel.js';
 import Transactions from '../models/TransactionModel.js';
 
 export const getAllTransaction = async (req, res) => {
