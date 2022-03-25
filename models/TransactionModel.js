@@ -1,5 +1,5 @@
 import { Sequelize } from 'sequelize';
-import db from '../config/Database';
+import db from '../config/Database.js';
 
 const { DataTypes } = Sequelize;
 
@@ -48,3 +48,5 @@ const transactions = db.define('transactions', {
         type: DataTypes.JSON
     }
 })
+
+export default transactions;

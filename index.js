@@ -8,10 +8,11 @@ dotenv.config();
 const app = express();
 import Users from './models/UserModel.js';
 import Customers from './models/CustomerModel.js';
+import Transactions from './models/TransactionModel.js';
 
 try {
     await db.authenticate();
-    // await Customers.sync()
+    await Transactions.sync()
 } catch (error) {
     console.log(error)
 }

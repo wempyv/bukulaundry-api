@@ -33,7 +33,7 @@ export const createCustomer = async (req, res) => {
             message: "Berhasil menambahkan customer baru"
         });
     } catch (error) {
-        res.jsonn({ message: error.message })
+        res.json({ message: error.message })
     }
 }
 
