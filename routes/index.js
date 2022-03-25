@@ -20,4 +20,7 @@ router.post('/customer', createCustomer);
 router.patch('/customer/:id', updateCustomer);
 router.delete('/customer/:id', deleteCustomer);
 
+// Routes transactions
+
+
 export default router;
