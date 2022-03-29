@@ -45,13 +45,13 @@ Content-Type: application/json
 GET  http://localhost:5000/customer/3
 
 ###
-POST http://localhost:5000/transaction
+PATCH http://localhost:5000/transaction/13
 Content-Type: application/json
 
 {
     "transaction_unique":"BUKULAUNDRY1229",
     "user_id":2,
-    "name_customer":"Wempy Virgana",
+    "name_customer":"Wempy Virgana UPDATED",
     "address":"Jalan Gatot subroto",
     "whatsapp_number":"087742781223",
     "total_weight":4,

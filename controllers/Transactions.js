@@ -39,7 +39,7 @@ export const createTransaction = async (req, res) => {
 
 export const updateTransaction = async (req, res) => {
     try {
-        await Transactions.update(req, body, {
+        await Transactions.update(req.body, {
             where: {
                 id: req.params.id
             }
