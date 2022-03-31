@@ -51,6 +51,7 @@ export const Login = async (req, res) => {
         const userId = user[0].id;
         const name = user[0].name;
         const email = user[0].email;
+        const id_laundry = user[0].id_laundry;
         const address = user[0].address;
         const whatsapp_number = user[0].whatsapp_number;
         const price_wash_rubbing = user[0].price_wash_rubbing;
@@ -62,7 +63,7 @@ export const Login = async (req, res) => {
             expiresIn: '20s'
         });
 
-        const refreshToken = jwt.sign({ userId, name, email, address, whatsapp_number, price_wash_rubbing, price_rubbing, price_wash, service_fee }, process.env.REFRESH_TOKEN_SECRET, {
+        const refreshToken = jwt.sign({ userId, name, email, id_laundry, address, whatsapp_number, price_wash_rubbing, price_rubbing, price_wash, service_fee }, process.env.REFRESH_TOKEN_SECRET, {
             expiresIn: '1d'
         });
 

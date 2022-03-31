@@ -13,6 +13,9 @@ const users = db.define('users', {
     password: {
         type: DataTypes.STRING
     },
+    id_laundry: {
+        type: DataTypes.STRING
+    },
     address: {
         type: DataTypes.STRING
     },
