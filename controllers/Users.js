@@ -14,7 +14,7 @@ export const getUsers = async (req, res) => {
 }
 
 export const Register = async (req, res) => {
-    const { name, email, password, confPassword, address, whatsapp_number } = req.body;
+    const { name, email, password, confPassword, id_laundry, address, whatsapp_number } = req.body;
 
     if (password !== confPassword) return res.status(400).json({ msg: 'Password dan Konfirmasi Password tidak cocok !' })
 
@@ -24,6 +24,7 @@ export const Register = async (req, res) => {
         await Users.create({
             email: email,
             password: hashPassword,
+            id_laundry: id_laundry,
             name: name,
             address: address,
             whatsapp_number: whatsapp_number

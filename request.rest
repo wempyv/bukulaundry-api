@@ -49,6 +49,7 @@ PATCH http://localhost:5000/transaction/13
 Content-Type: application/json
 
 {
+
     "transaction_unique":"BUKULAUNDRY1229",
     "user_id":2,
     "name_customer":"Wempy Virgana UPDATED",
