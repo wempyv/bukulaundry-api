@@ -65,3 +65,6 @@ Content-Type: application/json
     "status_on_demand":"SEDANG DI ANTAR",
     "detail_item":[{"name_item":"Baju Kaos","total":5},{"name_item":"Baju Batik","total":2}]
 }
+
+###
+GET  http://localhost:5000/getlaundry/laundri77671

@@ -133,3 +133,16 @@ export const Logout = async (req, res) => {
     res.clearCookie('refreshToken');
     return res.sendStatus(200)
 }
+
+export const getLaundryById = async (req, res) => {
+    try {
+        const users = await Users.findAll({
+            where: {
+                id_laundry: req.params.id
+            }
+        });
+        res.json(users[0])
+    } catch (error) {
+        res.json({ message: error.message })
+    }
+}
