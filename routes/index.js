@@ -1,7 +1,7 @@
 import express from 'express';
 import { getUsers, Register, Login, Logout, updateUser, getLaundryById } from '../controllers/Users.js';
 import { getAllCustomer, getCustomerById, createCustomer, updateCustomer, deleteCustomer } from '../controllers/Customers.js'
-import { getAllTransaction, getTransactionById, createTransaction, updateTransaction, deleteTransaction } from '../controllers/Transactions.js';
+import { getAllTransaction, getTransactionById, createTransaction, updateTransaction, deleteTransaction, getInvoiceById } from '../controllers/Transactions.js';
 import { verifyToken } from '../middleware/VerifyToken.js';
 import { refreshToken } from '../controllers/RefreshToken.js';
 const router = express.Router();
@@ -28,6 +28,8 @@ router.post('/transaction', createTransaction);
 router.patch('/transaction/:id', updateTransaction);
 router.delete('/transaction/:id', deleteTransaction);
 
+// Routes Customer
 router.get('/getlaundry/:id', getLaundryById);
+router.get('/getinvoice/:id', getInvoiceById);
 
 export default router;

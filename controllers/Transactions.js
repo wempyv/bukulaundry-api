@@ -64,3 +64,16 @@ export const deleteTransaction = async (req, res) => {
         res.json({ message: error.message })
     }
 }
+
+export const getInvoiceById = async (req, res) => {
+    try {
+        const transaction = await Transactions.findAll({
+            where: {
+                transaction_unique: req.params.id
+            }
+        });
+        res.json(transaction[0])
+    } catch (error) {
+        res.json({ message: error.message })
+    }
+}
