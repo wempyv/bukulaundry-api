@@ -1,5 +1,5 @@
 import express from 'express';
-import { getUsers, Register, Login, Logout, updateUser, getLaundryById } from '../controllers/Users.js';
+import { getUsers, Register, Login, Logout, updateUser, getLaundryById, getLaundry } from '../controllers/Users.js';
 import { getAllCustomer, getCustomerById, createCustomer, updateCustomer, deleteCustomer } from '../controllers/Customers.js'
 import { getAllTransaction, getTransactionById, createTransaction, updateTransaction, deleteTransaction, getInvoiceById } from '../controllers/Transactions.js';
 import { verifyToken } from '../middleware/VerifyToken.js';
@@ -31,5 +31,6 @@ router.delete('/transaction/:id', deleteTransaction);
 // Routes Customer
 router.get('/getlaundry/:id', getLaundryById);
 router.get('/getinvoice/:id', getInvoiceById);
+router.get('/laundry/:id', getLaundry)
 
 export default router;

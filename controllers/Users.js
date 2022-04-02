@@ -146,3 +146,16 @@ export const getLaundryById = async (req, res) => {
         res.json({ message: error.message })
     }
 }
+
+export const getLaundry = async (req, res) => {
+    try {
+        const users = await Users.findAll({
+            where: {
+                id: req.params.id
+            }
+        });
+        res.json(users[0])
+    } catch (error) {
+        res.json({ message: error.message })
+    }
+}
