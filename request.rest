@@ -68,3 +68,6 @@ Content-Type: application/json
 
 ###
 GET  http://localhost:5000/getlaundry/laundri77671
+
+###
+GET  http://localhost:5000/getinvoice/bukulaundry59085
