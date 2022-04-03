@@ -83,7 +83,7 @@ export const Login = async (req, res) => {
 }
 
 export const updateUser = async (req, res) => {
-    const { name, email, password, address, whatsapp_number, price_wash_rubbing, price_rubbing, price_wash, service_fee } = req.body
+    const { name, email, password, address, whatsapp_number, price_wash_rubbing, price_rubbing, price_wash, service_fee, payment_method } = req.body
 
     const salt = await bcrypt.genSalt();
     const hashPassword = await bcrypt.hash(password, salt)
@@ -97,7 +97,8 @@ export const updateUser = async (req, res) => {
         price_wash_rubbing: price_wash_rubbing,
         price_rubbing: price_rubbing,
         price_wash: price_wash,
-        service_fee: service_fee
+        service_fee: service_fee,
+        payment_method: payment_method
     }
 
     try {

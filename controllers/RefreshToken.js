@@ -16,6 +16,7 @@ export const refreshToken = async (req, res) => {
         jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, decoded) => {
             if (err) return res.sendStatus(403);
 
+            const payment_method = user[0].payment_method;
             const idLaundry = user[0].id_laundry;
             const userId = user[0].id;
             const name = user[0].name;
@@ -27,7 +28,7 @@ export const refreshToken = async (req, res) => {
             const price_wash = user[0].price_wash;
             const service_fee = user[0].service_fee;
 
-            const accessToken = jwt.sign({ idLaundry, userId, name, email, address, whatsapp_number, price_wash_rubbing, price_rubbing, price_wash, service_fee }, process.env.ACCESS_TOKEN_SECRET, {
+            const accessToken = jwt.sign({ idLaundry, userId, name, email, address, whatsapp_number, price_wash_rubbing, price_rubbing, price_wash, service_fee, payment_method }, process.env.ACCESS_TOKEN_SECRET, {
                 expiresIn: '15s'
             });
             res.json({ accessToken })

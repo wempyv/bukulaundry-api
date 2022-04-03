@@ -36,6 +36,9 @@ const users = db.define('users', {
     },
     refresh_token: {
         type: DataTypes.TEXT
+    },
+    payment_method: {
+        type: DataTypes.JSON
     }
 }, {
     freezeTableName: true
