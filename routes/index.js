@@ -2,8 +2,6 @@ import express from 'express';
 import { getUsers, Register, Login, Logout, updateUser, getLaundryById, getLaundry } from '../controllers/Users.js';
 import { getAllCustomer, getCustomerById, createCustomer, updateCustomer, deleteCustomer } from '../controllers/Customers.js'
 import { getAllTransaction, getTransactionById, createTransaction, updateTransaction, deleteTransaction, getInvoiceById } from '../controllers/Transactions.js';
-import { uploadFiles } from '../controllers/Upload.js';
-import Upload from '../middleware/Upload.js';
 import { verifyToken } from '../middleware/VerifyToken.js';
 import { refreshToken } from '../controllers/RefreshToken.js';
 const router = express.Router();
@@ -35,7 +33,5 @@ router.get('/getlaundry/:id', getLaundryById);
 router.get('/getinvoice/:id', getInvoiceById);
 router.get('/laundry/:id', getLaundry)
 
-// Upload files API
-router.post('/upload', Upload.single('file'), uploadFiles);
 
 export default router;
