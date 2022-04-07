@@ -9,7 +9,6 @@ const app = express();
 import Users from './models/UserModel.js';
 import Customers from './models/CustomerModel.js';
 import Transactions from './models/TransactionModel.js';
-import PaymentImage from './models/PaymentImage.js';
 
 try {
     await db.authenticate();
