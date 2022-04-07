@@ -3,16 +3,13 @@ import db from '../config/Database.js';
 
 const { DataTypes } = Sequelize;
 
-const Image = db.define('image', {
+const file = db.define('file', {
     transaction_id: {
         type: DataTypes.INTEGER
     },
-    name: {
+    image: {
         type: DataTypes.STRING
-    },
-    data: {
-        type: DataTypes.BLOB('long')
     }
 })
 
-export default Image;
+export default file;

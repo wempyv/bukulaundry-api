@@ -4,6 +4,8 @@ import { getAllCustomer, getCustomerById, createCustomer, updateCustomer, delete
 import { getAllTransaction, getTransactionById, createTransaction, updateTransaction, deleteTransaction, getInvoiceById } from '../controllers/Transactions.js';
 import { verifyToken } from '../middleware/VerifyToken.js';
 import { refreshToken } from '../controllers/RefreshToken.js';
+import { createFile, uploadImg } from '../controllers/File.js';
+
 const router = express.Router();
 
 // Routes Auth
@@ -33,5 +35,8 @@ router.get('/getlaundry/:id', getLaundryById);
 router.get('/getinvoice/:id', getInvoiceById);
 router.get('/laundry/:id', getLaundry)
 
+
+// Routes file
+router.post('/upload', uploadImg, createFile);
 
 export default router;

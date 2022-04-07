@@ -6,15 +6,14 @@ import cors from 'cors';
 import router from './routes/index.js';
 dotenv.config();
 const app = express();
-
 import Users from './models/UserModel.js';
 import Customers from './models/CustomerModel.js';
 import Transactions from './models/TransactionModel.js';
-import Image from './models/Image.js';
+import Image from './models/Image.js'
 
 try {
     await db.authenticate();
-    // await Image.sync()
+    await Image.sync()
 } catch (error) {
     console.log(error)
 }
