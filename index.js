@@ -21,6 +21,9 @@ try {
 app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 app.use(cookieParser());
 app.use(express.json());
+app.use('/upload', express.static('./uploads'));
+
+
 app.use(router);
 
 app.listen(5000, () => console.log('Server is running at port 5000'));
