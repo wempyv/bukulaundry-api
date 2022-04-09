@@ -25,3 +25,16 @@ export const createFile = async (req, res) => {
         res.json({ message: error.message })
     }
 }
+
+export const getFileById = async (req, res) => {
+    try {
+        const file = await File.findAll({
+            where: {
+                payment_id: req.params.id
+            }
+        });
+        res.json(file[0])
+    } catch (error) {
+        res.json({ message: error.message })
+    }
+}

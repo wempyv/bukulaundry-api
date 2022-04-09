@@ -4,7 +4,7 @@ import { getAllCustomer, getCustomerById, createCustomer, updateCustomer, delete
 import { getAllTransaction, getTransactionById, createTransaction, updateTransaction, deleteTransaction, getInvoiceById } from '../controllers/Transactions.js';
 import { verifyToken } from '../middleware/VerifyToken.js';
 import { refreshToken } from '../controllers/RefreshToken.js';
-import { createFile, uploadImg } from '../controllers/File.js';
+import { createFile, uploadImg, getFileById } from '../controllers/File.js';
 
 const router = express.Router();
 
@@ -38,5 +38,6 @@ router.get('/laundry/:id', getLaundry)
 
 // Routes file
 router.post('/upload', uploadImg, createFile);
+router.get('/upload/:id', getFileById);
 
 export default router;
