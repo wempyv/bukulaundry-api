@@ -30,7 +30,7 @@ export const getFileById = async (req, res) => {
     try {
         const file = await File.findAll({
             where: {
-                payment_id: req.params.id
+                transaction_id: req.params.id
             }
         });
         res.json(file[0])
