@@ -38,7 +38,8 @@ const users = db.define('users', {
         type: DataTypes.TEXT
     },
     payment_method: {
-        type: DataTypes.JSON
+        type: DataTypes.JSON,
+        defaultValue: []
     }
 }, {
     freezeTableName: true

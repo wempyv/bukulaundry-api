@@ -13,7 +13,7 @@ import Image from './models/Image.js'
 
 try {
     await db.authenticate();
-    await Image.sync()
+    await Users.sync()
 } catch (error) {
     console.log(error)
 }
