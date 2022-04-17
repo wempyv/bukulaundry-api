@@ -21,6 +21,28 @@ export const Register = async (req, res) => {
     const salt = await bcrypt.genSalt();
     const hashPassword = await bcrypt.hash(password, salt)
 
+    const emailValidation = await Users.findAll({
+        where: {
+            email: email
+        }
+    });
+
+    const whatsappValidation = await Users.findAll({
+        where: {
+            whatsapp_number: whatsapp_number
+        }
+    });
+
+
+    if (emailValidation[0]) {
+        return res.status(400).json({ msg: 'Email Sudah Terdaftar' })
+    }
+
+    if (whatsappValidation[0]) {
+        return res.status(400).json({ msg: 'Nomor Sudah Terdaftar' })
+    }
+
+
     try {
         await Users.create({
             email: email,
