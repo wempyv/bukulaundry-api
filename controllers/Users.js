@@ -44,7 +44,6 @@ export const Register = async (req, res) => {
         return res.status(400).json({ msg: 'Nomor Sudah Terdaftar' })
     }
 
-
     try {
         await Users.create({
             email: email,
