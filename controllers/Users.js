@@ -34,10 +34,12 @@ export const Register = async (req, res) => {
     });
 
 
+    // Email Validation
     if (emailValidation[0]) {
         return res.status(400).json({ msg: 'Email Sudah Terdaftar' })
     }
 
+    // Whatsapp Number Validation
     if (whatsappValidation[0]) {
         return res.status(400).json({ msg: 'Nomor Sudah Terdaftar' })
     }
@@ -68,7 +70,7 @@ export const Login = async (req, res) => {
 
         const match = await bcrypt.compare(req.body.password, user[0].password);
 
-        //    If wrong password / not match password
+        // Authe 2 Factor Password
         if (!match) return res.status(400).json({ msg: 'Password salah' });
 
         const userId = user[0].id;
